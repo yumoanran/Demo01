@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor=HEXCOLOR(0xf8f8f8);
+    self.navigationController.navigationBarHidden=NO;
     [self _createNaviView];
     
     [self _createSubView];
@@ -87,7 +88,7 @@
 }
 
 - (void)backButtonAction:(UIButton *)sender{
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

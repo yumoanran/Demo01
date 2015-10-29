@@ -13,4 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField *contentTextField;
+
+@property(nonatomic,strong)UILabel *contentLabel;
 @end

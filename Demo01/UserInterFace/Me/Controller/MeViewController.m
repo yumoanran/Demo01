@@ -17,7 +17,7 @@
 #import "LoginViewController.h"
 #import "PersonInCenterViewController.h"
 #import "UserEditingViewController.h"
-
+#import "MyDownLoadViewController.h"
 #import "MyAttentionViewController.h"
 #import "MyTagViewController.h"
 
@@ -37,15 +37,19 @@
 
 @implementation MeViewController
 
+
+- (void)viewWillAppear:(BOOL)animated{
+    self.navigationController.navigationBarHidden=YES;
+}
 //个人中心
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor colorWithRed:248/255.0 green:248/255.0 blue:248/255.0 alpha:1];
-    self.navigationController.navigationBarHidden=YES;
+    
     [self requestData];
     
-   // [self _createLoadedView];
-    [self _createuUnloadView];
+    [self _createLoadedView];
+    //[self _createuUnloadView];
 }
 
 - (void)requestData{
@@ -173,6 +177,8 @@
     }else if (indexPath.section==1){
         if (indexPath.item==0) {
             //下载
+            MyDownLoadViewController *downLoadVC=[[MyDownLoadViewController alloc]init];
+            [self.navigationController pushViewController:downLoadVC animated:YES];
         }else if (indexPath.item==1) {
             //收藏
 //            InformViewController *informVC=[[InformViewController alloc]init];
@@ -184,7 +190,8 @@
         EditViewController *editVC=[[EditViewController alloc]init];
 //        UINavigationController *naviVC=[[UINavigationController alloc]initWithRootViewController:editVC];
         editVC.title=@"设置";
-        [self presentViewController:editVC animated:YES completion:nil];
+        //[self presentViewController:editVC animated:YES completion:nil];
+        [self.navigationController pushViewController:editVC animated:YES];
     }
 }
 

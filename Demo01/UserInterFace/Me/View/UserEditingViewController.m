@@ -122,7 +122,27 @@
     MeEditListCollectionCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:kEditListCollectionViewCellIdentifier forIndexPath:indexPath];
     cell.imgView.image=[UIImage imageNamed:_imgArr[indexPath.item]];
     cell.nameLabel.text=_titleArr[indexPath.item];
+    if (indexPath.item>=2) {
+        cell.contentTextField.hidden=YES;
+        cell.contentLabel.hidden=NO;
+    }else{
+        cell.contentTextField.hidden=NO;
+        cell.contentLabel.hidden=YES;
+    }
+    if (indexPath.item==3) {
+        cell.contentLabel.text=@"女";
+    }
     return cell;
+}
+
+#pragma mark - CollectionView Delegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.item==3) {
+        ;
+    }
+    if (indexPath.item==5) {
+        //添加兴趣
+    }
 }
 
 #pragma mark - Button Action

@@ -19,6 +19,8 @@
         self.delegate=self;
         self.dataSource=self;
         self.backgroundColor=[UIColor clearColor];
+         self.separatorStyle=UITableViewCellSeparatorStyleNone;
+        [self registerNib:[UINib nibWithNibName:@"ActivityTableViewCell" bundle:nil] forCellReuseIdentifier:kActivityTableViewCellIdentifier];
     }
     return self;
 }
@@ -40,7 +42,11 @@
 
 #pragma mark - TableView Delagate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 72;
+    return 172;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.1;
 }
 
 @end

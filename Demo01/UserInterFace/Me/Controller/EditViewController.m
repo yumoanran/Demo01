@@ -14,7 +14,7 @@
 #import "AccountViewController.h"
 #import "PrivacyViewController.h"
 #import "InformViewController.h"
-
+#import "AboutWdqViewController.h"
 #import "IdeaViewController.h"
 #import "EditListTableViewCell.h"
 
@@ -29,6 +29,9 @@
 
 @implementation EditViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    self.navigationController.navigationBarHidden=YES;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor colorWithRed:248/255.0 green:248/255.0 blue:248/255.0 alpha:1];
@@ -131,29 +134,39 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row==0) {
+        //账号与安全
         AccountViewController *accountVC=[[AccountViewController alloc]init];
         UINavigationController *naviVC=[[UINavigationController alloc]initWithRootViewController:accountVC];
         [self presentViewController:naviVC animated:NO completion:nil];
     }else if (indexPath.row==2) {
+        //通知
         InformViewController *informVC=[[InformViewController alloc]init];
         informVC.title=@"通知";
         [self presentViewController:informVC animated:YES completion:nil];
     }else if (indexPath.row==1){
+        //隐私
         UIStoryboard *stb=[UIStoryboard storyboardWithName:@"Me" bundle:nil];
         PrivacyViewController *priVc=[stb instantiateViewControllerWithIdentifier:@"PrivacyViewControllerID"];
         
         [self presentViewController:priVc animated:YES completion:nil];
     }else if (indexPath.row==6){
+        //用户反馈
         IdeaViewController *ideaVC=[[IdeaViewController alloc]init];
-        UINavigationController *naviVC=[[UINavigationController alloc]initWithRootViewController:ideaVC];
-        [self presentViewController:naviVC animated:NO completion:nil];
+        [self.navigationController pushViewController:ideaVC animated:YES];
+        //[self presentViewController:naviVC animated:NO completion:nil];
+    }else if(indexPath.row==4){
+        //关于舞蹈圈
+        AboutWdqViewController *aboutVC=[[AboutWdqViewController alloc]init];
+
+        [self.navigationController pushViewController:aboutVC animated:YES];
     }
     
 }
 
 #pragma mark - ButtonAction
 - (void)backButtonAction:(UIButton *)sender{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

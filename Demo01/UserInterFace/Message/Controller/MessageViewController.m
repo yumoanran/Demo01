@@ -31,7 +31,7 @@
     
     self.data=[NSMutableArray array];
     self.view.backgroundColor=[UIColor colorWithRed:248/255.0 green:248/255.0 blue:248/255.0 alpha:1];
-    self.navigationController.navigationBar.backgroundColor=[UIColor whiteColor];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
     [self _createNaviItem];
     [self _createSubViews];
     

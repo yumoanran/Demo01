@@ -10,9 +10,12 @@
 
 #import "Common.h"
 
+#import "HotActivityTableView.h"
+#import "localActivityTableView.h"
+#import "MyActivityTableView.h"
 #import "ChangeScrollView.h"
 
-@interface ActivityViewController (){
+@interface ActivityViewController ()<UIScrollViewDelegate>{
     UIView *_choiceView;
     ChangeScrollView *_changeScrollView;
 }
@@ -28,6 +31,7 @@
     self.navigationController.navigationBarHidden=NO;
     [self _createNaviView];
     [self _createChoiceView];
+    [self _createScrollView];
 }
 
 - (void)_createNaviView{
@@ -47,7 +51,7 @@
 }
 
 - (void)_createChoiceView{
-    NSArray *titArr=@[@"标签",@"用户",@"内容"];
+    NSArray *titArr=@[@"热门",@"同城",@"我的"];
     _choiceView=[[UIView alloc]initWithFrame:CGRectMake(0, kNavigationBarHeight, kScreenWidth, 44)];
     _choiceView.backgroundColor=[UIColor colorWithRed:28/255.0 green:28/255.0 blue:28/255.0 alpha:0.94];
     [self.view addSubview:_choiceView];
@@ -72,6 +76,20 @@
             button.selected=YES;
         }
     }
+}
+
+//
+- (void)_createScrollView{
+    HotActivityTableView *hotTableView=[[HotActivityTableView alloc]initWithFrame:CGRectMake(kScreenWidth*0, 0, kScreenWidth,kScreenHeight-kNavigationBarHeight-44)];
+    localActivityTableView *localTableView=[[localActivityTableView alloc]initWithFrame:CGRectMake(kScreenWidth*1, 0, kScreenWidth, kScreenHeight-kNavigationBarHeight-44)];
+    MyActivityTableView *myActiTableView=[[MyActivityTableView alloc]initWithFrame:CGRectMake(kScreenWidth*2, 0, kScreenWidth, kScreenHeight-kNavigationBarHeight-44)];
+    
+    _changeScrollView=[[ChangeScrollView alloc]initWithFrame:CGRectMake(0, kNavigationBarHeight+44, kScreenWidth, kScreenHeight-kNavigationBarHeight-44) withFirstTableView:hotTableView withSecondTableView:localTableView withThirdTableView:myActiTableView];
+    _changeScrollView.contentSize=CGSizeMake(kScreenWidth*3, _changeScrollView.height);
+    _changeScrollView.pagingEnabled=YES;
+    _changeScrollView.delegate=self;
+    _changeScrollView.contentOffset=CGPointMake(kScreenWidth*_selectedIndex, 0);
+    [self.view addSubview:_changeScrollView];
 }
 
 - (void)setSelectedIndex:(int)selectedIndex{

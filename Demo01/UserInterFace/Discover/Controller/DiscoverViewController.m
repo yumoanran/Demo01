@@ -107,6 +107,7 @@
     nearLabel.text=@"附近的人";
     nearLabel.font=[UIFont systemFontOfSize:11];
     [_headView addSubview:nearLabel];
+    
     UIView *vlineView=[[UIView alloc]initWithFrame:CGRectMake(18+45, colorView.bottom+30, kScreenWidth-64, 1)];
     vlineView.backgroundColor=[UIColor colorWithRed:234/255.0 green:234/255.0 blue:234/255.0 alpha:1];
     [_headView addSubview:vlineView];
