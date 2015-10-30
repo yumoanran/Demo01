@@ -14,6 +14,7 @@
 #import "UIViewExt.h"
 
 #import "StateCollectionView.h"
+#import "ToolTipView.h"
 @implementation ProisView
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -59,38 +60,10 @@
 
 //创建收藏 举报 视图
 - (void)_createWhiteView{
-    _whiteView=[[UIView alloc]initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight-kTabBarHeight-64)];
-    _whiteView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"图片上的黑色蒙版2@"]];
-    _whiteView.alpha=1;
-    [self insertSubview:_whiteView atIndex:self.subviews.count];
+    
     NSArray *nameArr=@[@"收藏",@"举报",@"取消"];
-    for (int i=0; i<3; i++) {
-        UIView *alerView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 54)];
-        alerView.backgroundColor=[UIColor whiteColor];
-        UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
-        button.backgroundColor=[UIColor whiteColor];
-        button.frame=CGRectMake((kScreenWidth-60)/2, (alerView.height-16)/2, 60, 16);
-        button.titleLabel.textAlignment=NSTextAlignmentCenter;
-        button.titleLabel.font=[UIFont systemFontOfSize:15];
-        [button setTitleColor:[UIColor colorWithRed:101/255.0 green:104/255.0 blue:105/255.0 alpha:1] forState:UIControlStateNormal];
-        [button setTitle:nameArr[i] forState:UIControlStateNormal];
-        [alerView addSubview:button];
-        [_whiteView addSubview:alerView];
-        
-        if (i==0) {
-            alerView.frame=CGRectMake(0, kScreenHeight-kTabBarHeight-64-54*3-1-11,kScreenWidth,55);
-        }else if (i==1){
-            alerView.origin=CGPointMake(0, kScreenHeight-kTabBarHeight-64-54*2-11);
-        }else{
-            alerView.origin=CGPointMake(0, kScreenHeight-kTabBarHeight-64-54);
-            [button setTitleColor:[UIColor colorWithRed:27/255.0 green:178/255.0 blue:233/255.0 alpha:1]
-                         forState:UIControlStateNormal];
-
-        }
-    }
-    UIView *lineView=[[UIView alloc]initWithFrame:CGRectMake(0, kScreenHeight-kTabBarHeight-64-54*2-11, kScreenWidth, 1)];
-    lineView.backgroundColor=[UIColor colorWithRed:234/255.0 green:234/255.0 blue:234/255.0 alpha:1];
-    [_whiteView addSubview:lineView];
+    _whiteView=[[ToolTipView alloc]initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight-kTabBarHeight-64) WithArr:nameArr];
+    [self insertSubview:_whiteView atIndex:self.subviews.count];
     _whiteView.hidden=YES;
     
 }

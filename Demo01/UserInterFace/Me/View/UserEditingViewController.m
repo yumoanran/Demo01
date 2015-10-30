@@ -12,15 +12,19 @@
 #import "UIViewExt.h"
 #import "Common.h"
 
+#import "UserInterestViewController.h"
 #import "MeEditListCollectionCell.h"
 
+#import "DatePickerView.h"
+#import "ToolTipView.h"
 #define kEditListCollectionViewCellIdentifier @"kEdit_List_CollectionViewCell_ID"
-@interface UserEditingViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>{
+@interface UserEditingViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UIAlertViewDelegate>{
     MeTopView *_topView;
     NSArray *_imgArr;
     NSArray *_titleArr;
-    
+    ToolTipView *_whiteView;
     UICollectionView *_editListCollectionView;
+    DatePickerView *_datePicker;
 }
 
 @end
@@ -33,6 +37,9 @@
     self.view.backgroundColor=[UIColor whiteColor];
     [self _createTopView];
     [self _createSubViews];
+    
+    //性别选择弹窗
+    [self _createWhiteView];
 }
 
 - (void)requestData{
@@ -109,6 +116,19 @@
     [self.view addSubview:_editListCollectionView];
 }
 
+//创建性别选择弹窗
+- (void)_createWhiteView{
+    NSArray *nameArr=@[@"男",@"女",@"取消"];
+    _whiteView=[[ToolTipView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) WithArr:nameArr];
+    
+    [self.view insertSubview:_whiteView atIndex:self.view.subviews.count];
+    _whiteView.hidden=YES;
+    
+    _datePicker=[[DatePickerView alloc]initWithFrame:self.view.bounds];
+    [self.view addSubview:_datePicker];
+    _datePicker.hidden=YES;
+}
+
 #pragma mark - CollectionView DataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -129,8 +149,19 @@
         cell.contentTextField.hidden=NO;
         cell.contentLabel.hidden=YES;
     }
-    if (indexPath.item==3) {
+    if (indexPath.item==2) {
+        //出生日期
+        _datePicker.block=^(NSString *value){
+            cell.contentLabel.text=value;
+        };
+        
+    }else if (indexPath.item==3) {
+        //性别
         cell.contentLabel.text=@"女";
+        //block的实现
+        _whiteView.block=^(NSString *value){
+            cell.contentLabel.text=value;
+        };
     }
     return cell;
 }
@@ -138,10 +169,24 @@
 #pragma mark - CollectionView Delegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.item==3) {
-        ;
+        _whiteView.hidden=NO;
+    }else if (indexPath.item==2){
+        //出生日期
+        _datePicker.hidden=NO;
+//        UIAlertView *alertDateView=[[UIAlertView alloc]initWithTitle:nil message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+//        UIDatePicker *dataPicker=[[UIDatePicker alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 180)];
+//        dataPicker.datePickerMode=UIDatePickerModeDate;
+//        dataPicker.tag=1999;
+//        dataPicker.locale=[[NSLocale alloc]initWithLocaleIdentifier:@"zh_CN"];
+//        dataPicker.maximumDate=dataPicker.date;
+//        [alertDateView addSubview:dataPicker];
+//        [alertDateView show];
+        
     }
     if (indexPath.item==5) {
         //添加兴趣
+        UserInterestViewController *interestVC=[[UserInterestViewController alloc]init];
+        [self.navigationController pushViewController:interestVC animated:YES];
     }
 }
 
@@ -162,4 +207,18 @@
 //    PersonInCenterViewController *personInCenterVC=[[PersonInCenterViewController alloc]init];
 //    [self presentViewController:personInCenterVC animated:YES completion:nil];
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex==1) {
+        UIDatePicker *datePicker=(UIDatePicker *)[alertView viewWithTag:1999];
+        //NSDate格式转换为NSString格式
+        NSDate *pickerDate=[datePicker date];
+        NSDateFormatter *pickerFormatter=[[NSDateFormatter alloc]init];
+        [pickerFormatter setDateFormat:@"yyyy年MM月dd日"];
+        NSString *dateString=[pickerFormatter stringFromDate:pickerDate];
+        
+        [_editListCollectionView reloadData];
+    }
+}
+
 @end

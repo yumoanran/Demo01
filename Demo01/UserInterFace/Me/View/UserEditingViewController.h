@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+//创建代理
+@protocol SexChangeDelegate<NSObject>
+- (void)sexChoiceWith:(NSInteger)index;
+@end
 
 @interface UserEditingViewController : UIViewController
 

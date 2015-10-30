@@ -381,8 +381,10 @@
 		BBDB99471BCCB71000240547 /* 转发2@.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDB99261BCCB71000240547 /* 转发2@.png */; };
 		BBDB99491BCCB71000240547 /* 顶部背景2@.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDB99281BCCB71000240547 /* 顶部背景2@.png */; };
 		BBDB994A1BCCB71000240547 /* 顶部背景黑蒙版2@.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDB99291BCCB71000240547 /* 顶部背景黑蒙版2@.png */; };
+		BBF130DF1BE30F4500D3B51E /* ToolTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF130DE1BE30F4500D3B51E /* ToolTipView.m */; settings = {ASSET_TAGS = (); }; };
+		BBF130E11BE33F9500D3B51E /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF130E01BE33F9500D3B51E /* libicucore.tbd */; };
+		BBF130E71BE3493B00D3B51E /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF130E61BE3493B00D3B51E /* DatePickerView.m */; settings = {ASSET_TAGS = (); }; };
 		BBF7E7741BC8DE3200C70707 /* UIView+UIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF7E7731BC8DE3200C70707 /* UIView+UIViewController.m */; };
-		BBF7E7771BC8DF3200C70707 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF7E7761BC8DF3200C70707 /* libicucore.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -904,10 +906,14 @@
 		BBDB99261BCCB71000240547 /* 转发2@.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "转发2@.png"; sourceTree = "<group>"; };
 		BBDB99281BCCB71000240547 /* 顶部背景2@.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "顶部背景2@.png"; sourceTree = "<group>"; };
 		BBDB99291BCCB71000240547 /* 顶部背景黑蒙版2@.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "顶部背景黑蒙版2@.png"; sourceTree = "<group>"; };
+		BBF130DD1BE30F4500D3B51E /* ToolTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolTipView.h; sourceTree = "<group>"; };
+		BBF130DE1BE30F4500D3B51E /* ToolTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolTipView.m; sourceTree = "<group>"; };
+		BBF130E01BE33F9500D3B51E /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		BBF130E51BE3493B00D3B51E /* DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerView.h; sourceTree = "<group>"; };
+		BBF130E61BE3493B00D3B51E /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
 		BBF7E7721BC8DE3200C70707 /* UIView+UIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewController.h"; sourceTree = "<group>"; };
 		BBF7E7731BC8DE3200C70707 /* UIView+UIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewController.m"; sourceTree = "<group>"; };
 		BBF7E7751BC8DE6700C70707 /* Demo01.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo01.pch; sourceTree = "<group>"; };
-		BBF7E7761BC8DF3200C70707 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -915,7 +921,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBF7E7771BC8DF3200C70707 /* libicucore.dylib in Frameworks */,
+				BBF130E11BE33F9500D3B51E /* libicucore.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,7 +955,7 @@
 		217489E91BC7763A00827050 = {
 			isa = PBXGroup;
 			children = (
-				BBF7E7761BC8DF3200C70707 /* libicucore.dylib */,
+				BBF130E01BE33F9500D3B51E /* libicucore.tbd */,
 				217489F41BC7763A00827050 /* Demo01 */,
 				21748A0E1BC7763A00827050 /* Demo01Tests */,
 				217489F31BC7763A00827050 /* Products */,
@@ -1119,6 +1125,10 @@
 				BB3737DA1BC8E24700AF32B5 /* BannerView.h */,
 				BB3737DB1BC8E24700AF32B5 /* BannerView.m */,
 				217489FF1BC7763A00827050 /* Main.storyboard */,
+				BBF130DD1BE30F4500D3B51E /* ToolTipView.h */,
+				BBF130DE1BE30F4500D3B51E /* ToolTipView.m */,
+				BBF130E51BE3493B00D3B51E /* DatePickerView.h */,
+				BBF130E61BE3493B00D3B51E /* DatePickerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2355,6 +2365,7 @@
 				BBDB98F51BCCA30700240547 /* StateModel.m in Sources */,
 				BB3738431BC9027D00AF32B5 /* DanceView.m in Sources */,
 				BB3738281BC8FB7700AF32B5 /* MJRefreshAutoFooter.m in Sources */,
+				BBF130E71BE3493B00D3B51E /* DatePickerView.m in Sources */,
 				21748AB71BC7AF4900827050 /* NSData+ImageContentType.m in Sources */,
 				BB7B8EE91BD79C0800263CDE /* EditViewController.m in Sources */,
 				BB7B8EE61BD790E000263CDE /* UserInfoViewController.m in Sources */,
@@ -2392,6 +2403,7 @@
 				21748AC11BC7AF4900827050 /* UIImage+MultiFormat.m in Sources */,
 				21748AC41BC7AF4900827050 /* UIImageView+WebCache.m in Sources */,
 				BB7FB1C81BD5F6110019B490 /* TagTableViewCell.m in Sources */,
+				BBF130DF1BE30F4500D3B51E /* ToolTipView.m in Sources */,
 				BB0C394E1BDA543E0034537B /* SearchTagTableViewCell.m in Sources */,
 				21748AC51BC7AF4900827050 /* UIView+WebCacheOperation.m in Sources */,
 				BB37382D1BC8FB7700AF32B5 /* MJRefreshAutoGifFooter.m in Sources */,

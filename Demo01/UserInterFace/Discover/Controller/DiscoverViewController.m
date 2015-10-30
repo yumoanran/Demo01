@@ -18,9 +18,10 @@
 
 #import "ActivityViewController.h"
 
+#import "ToolTipView.h"
 #define kDiscoverTableViewCellIdentifier @"kDiscoverTableViewCellIdentifier"
 @interface DiscoverViewController ()<UITableViewDataSource,UITableViewDelegate>{
-    
+    ToolTipView *_whiteView;
     UIView *_headView;
     UITableView *_discoverTableView;
     ClassNaviView *_naviView;
@@ -35,6 +36,9 @@
     [self _createHeadView];
     [self _createViews];
     [self _createNaviView];
+    
+    //筛选弹窗
+    [self _createWhiteView];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -100,6 +104,7 @@
     [choiceButton addTarget:self
                      action:@selector(choiceButtonAction:)
            forControlEvents:UIControlEventTouchUpInside];
+    choiceButton.selected=NO;
     [_headView addSubview:choiceButton];
     
     UILabel *nearLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, colorView.bottom+24, 45, 16)];
@@ -132,6 +137,17 @@
     
     [_naviView.backButton removeFromSuperview];
     _naviView.titleLabel.text=@"发现";
+}
+
+//创建筛选弹窗
+- (void)_createWhiteView{
+    NSArray *nameArr=@[@"男",@"女",@"取消"];
+    
+    _whiteView=[[ToolTipView alloc]initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight-kTabBarHeight-64) WithArr:nameArr];
+    
+    [self.view insertSubview:_whiteView atIndex:self.view.subviews.count];
+    _whiteView.hidden=YES;
+    
 }
 
 #pragma mark - TableView Delegate
@@ -176,7 +192,7 @@
 #pragma mark - Button Action
 //筛选按钮
 - (void)choiceButtonAction:(UIButton *)sender{
-    
+            _whiteView.hidden=NO;
 }
 
 //活动赛事

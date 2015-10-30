@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class ToolTipView;
 @class BannerView;
 @interface ProisView : UIView<UITableViewDataSource,UITableViewDelegate>{
     BannerView *_bannerView;
     
     UITableView *_stateTableView;
     
-    UIView *_whiteView;
+    ToolTipView *_whiteView;
 }
 
 
