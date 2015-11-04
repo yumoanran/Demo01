@@ -173,15 +173,6 @@
     }else if (indexPath.item==2){
         //出生日期
         _datePicker.hidden=NO;
-//        UIAlertView *alertDateView=[[UIAlertView alloc]initWithTitle:nil message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-//        UIDatePicker *dataPicker=[[UIDatePicker alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 180)];
-//        dataPicker.datePickerMode=UIDatePickerModeDate;
-//        dataPicker.tag=1999;
-//        dataPicker.locale=[[NSLocale alloc]initWithLocaleIdentifier:@"zh_CN"];
-//        dataPicker.maximumDate=dataPicker.date;
-//        [alertDateView addSubview:dataPicker];
-//        [alertDateView show];
-        
     }
     if (indexPath.item==5) {
         //添加兴趣
@@ -208,17 +199,5 @@
 //    [self presentViewController:personInCenterVC animated:YES completion:nil];
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex==1) {
-        UIDatePicker *datePicker=(UIDatePicker *)[alertView viewWithTag:1999];
-        //NSDate格式转换为NSString格式
-        NSDate *pickerDate=[datePicker date];
-        NSDateFormatter *pickerFormatter=[[NSDateFormatter alloc]init];
-        [pickerFormatter setDateFormat:@"yyyy年MM月dd日"];
-        NSString *dateString=[pickerFormatter stringFromDate:pickerDate];
-        
-        [_editListCollectionView reloadData];
-    }
-}
 
 @end

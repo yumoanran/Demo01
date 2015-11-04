@@ -10,6 +10,8 @@
 
 #import "DanceModel.h"
 #import "VideoCollectionCell.h"
+#import "UIView+UIViewController.h"
+#import "DancePlayViewController.h"
 
 #define kVideoCollectionCellIdentifier @"k_Video_Collection_Cell_Identifier"
 @implementation DanceCollectionView
@@ -45,6 +47,10 @@
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    DancePlayViewController *playVC=[[DancePlayViewController alloc]init];
+    [self.viewController.navigationController pushViewController:playVC animated:YES];
+}
 
 - (void)setData:(NSArray *)data{
     _data=data;

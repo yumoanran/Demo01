@@ -80,6 +80,6 @@
     </objects>
     <resources>
         <image name="图片上的黑色蒙版2@.png" width="372" height="168"/>
-        <image name="播放2@.png" width="70" height="70"/>
+        <image name="播放2@.png" width="50" height="50"/>
     </resources>
 </document>

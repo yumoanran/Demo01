@@ -9,6 +9,8 @@
 #import "VideoTableView.h"
 
 #import "VideoTableViewCell.h"
+#import "DanceClassViewController.h"
+#import "UIView+UIViewController.h"
 
 #define kVideoTableViewCellIdentifier @"k_Video_TableView_Cell_Identifier"
 
@@ -47,6 +49,11 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 175;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    DanceClassViewController *danceVC=[[DanceClassViewController alloc]init];
+    [self.viewController.navigationController pushViewController:danceVC animated:YES];
 }
 
 @end

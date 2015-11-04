@@ -384,6 +384,10 @@
 		BBF130DF1BE30F4500D3B51E /* ToolTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF130DE1BE30F4500D3B51E /* ToolTipView.m */; settings = {ASSET_TAGS = (); }; };
 		BBF130E11BE33F9500D3B51E /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF130E01BE33F9500D3B51E /* libicucore.tbd */; };
 		BBF130E71BE3493B00D3B51E /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF130E61BE3493B00D3B51E /* DatePickerView.m */; settings = {ASSET_TAGS = (); }; };
+		BBF130EA1BE355E100D3B51E /* DanceClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF130E91BE355E100D3B51E /* DanceClassViewController.m */; settings = {ASSET_TAGS = (); }; };
+		BBF130EC1BE3567100D3B51E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF130EB1BE3567100D3B51E /* AVFoundation.framework */; settings = {ASSET_TAGS = (); }; };
+		BBF130EF1BE3598400D3B51E /* DancePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF130EE1BE3598400D3B51E /* DancePlayViewController.m */; settings = {ASSET_TAGS = (); }; };
+		BBF130F21BE359C900D3B51E /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF130F11BE359C900D3B51E /* CommentTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		BBF7E7741BC8DE3200C70707 /* UIView+UIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF7E7731BC8DE3200C70707 /* UIView+UIViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -911,6 +915,13 @@
 		BBF130E01BE33F9500D3B51E /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		BBF130E51BE3493B00D3B51E /* DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerView.h; sourceTree = "<group>"; };
 		BBF130E61BE3493B00D3B51E /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
+		BBF130E81BE355E100D3B51E /* DanceClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceClassViewController.h; sourceTree = "<group>"; };
+		BBF130E91BE355E100D3B51E /* DanceClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceClassViewController.m; sourceTree = "<group>"; };
+		BBF130EB1BE3567100D3B51E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVFoundation.framework; sourceTree = "<group>"; };
+		BBF130ED1BE3598400D3B51E /* DancePlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DancePlayViewController.h; path = Demo01/UserInterFace/Home/Class/Controller/DancePlayViewController.h; sourceTree = SOURCE_ROOT; };
+		BBF130EE1BE3598400D3B51E /* DancePlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DancePlayViewController.m; path = Demo01/UserInterFace/Home/Class/Controller/DancePlayViewController.m; sourceTree = SOURCE_ROOT; };
+		BBF130F01BE359C900D3B51E /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentTableViewCell.h; path = Demo01/UserInterFace/Home/Class/Controller/CommentTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		BBF130F11BE359C900D3B51E /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentTableViewCell.m; path = Demo01/UserInterFace/Home/Class/Controller/CommentTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		BBF7E7721BC8DE3200C70707 /* UIView+UIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewController.h"; sourceTree = "<group>"; };
 		BBF7E7731BC8DE3200C70707 /* UIView+UIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewController.m"; sourceTree = "<group>"; };
 		BBF7E7751BC8DE6700C70707 /* Demo01.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo01.pch; sourceTree = "<group>"; };
@@ -921,6 +932,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBF130EC1BE3567100D3B51E /* AVFoundation.framework in Frameworks */,
 				BBF130E11BE33F9500D3B51E /* libicucore.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -955,6 +967,7 @@
 		217489E91BC7763A00827050 = {
 			isa = PBXGroup;
 			children = (
+				BBF130EB1BE3567100D3B51E /* AVFoundation.framework */,
 				BBF130E01BE33F9500D3B51E /* libicucore.tbd */,
 				217489F41BC7763A00827050 /* Demo01 */,
 				21748A0E1BC7763A00827050 /* Demo01Tests */,
@@ -1850,6 +1863,8 @@
 				BB3737D31BC8E24700AF32B5 /* LastestViewController.m */,
 				BBD9B7DA1BCFB80E00CB34C2 /* HipHopViewController.h */,
 				BBD9B7DB1BCFB80E00CB34C2 /* HipHopViewController.m */,
+				BBF130E81BE355E100D3B51E /* DanceClassViewController.h */,
+				BBF130E91BE355E100D3B51E /* DanceClassViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1951,6 +1966,8 @@
 		BBF7E7791BC8E1DE00C70707 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BBF130ED1BE3598400D3B51E /* DancePlayViewController.h */,
+				BBF130EE1BE3598400D3B51E /* DancePlayViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1965,6 +1982,8 @@
 		BBF7E77B1BC8E1DE00C70707 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BBF130F01BE359C900D3B51E /* CommentTableViewCell.h */,
+				BBF130F11BE359C900D3B51E /* CommentTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2346,6 +2365,7 @@
 			files = (
 				BB3738371BC8FB7700AF32B5 /* MJRefreshConst.m in Sources */,
 				21748AC61BC7AF4900827050 /* UIViewExt.m in Sources */,
+				BBF130EF1BE3598400D3B51E /* DancePlayViewController.m in Sources */,
 				21748AC01BC7AF4900827050 /* UIImage+GIF.m in Sources */,
 				BB726A0D1BCBA01500B68D10 /* DanceModel.m in Sources */,
 				BB7A507A1BE0C8CE00C37682 /* HotActivityTableView.m in Sources */,
@@ -2356,6 +2376,7 @@
 				BB3738311BC8FB7700AF32B5 /* MJRefreshBackNormalFooter.m in Sources */,
 				BB3738341BC8FB7700AF32B5 /* MJRefreshNormalHeader.m in Sources */,
 				21748ABE1BC7AF4900827050 /* SDWebImagePrefetcher.m in Sources */,
+				BBF130F21BE359C900D3B51E /* CommentTableViewCell.m in Sources */,
 				BB70EB5F1BD4EA27007605FC /* MyStateTableViewCell.m in Sources */,
 				BBD7A4D71BDDE5620026AB6A /* ChangeScrollView.m in Sources */,
 				BB3738D21BC92BB300AF32B5 /* VideoCollectionCell.m in Sources */,
@@ -2397,6 +2418,7 @@
 				BBD9B7D31BCF95F000CB34C2 /* VideoTableViewCell.m in Sources */,
 				BB37382B1BC8FB7700AF32B5 /* MJRefreshFooter.m in Sources */,
 				BB726A101BCBB5B200B68D10 /* BlackView.m in Sources */,
+				BBF130EA1BE355E100D3B51E /* DanceClassViewController.m in Sources */,
 				BB70EB4F1BD4BFEA007605FC /* PageChoiceView.m in Sources */,
 				BBD9B7F41BCFBA9E00CB34C2 /* ClassNaviView.m in Sources */,
 				BB9390391BD0983200CE8AC1 /* HipTableHeadView.m in Sources */,
@@ -2601,6 +2623,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Demo01/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2612,6 +2638,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Demo01/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2633,6 +2663,7 @@
 				);
 				INFOPLIST_FILE = Demo01Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo01.app/Demo01";
 			};
@@ -2648,6 +2679,7 @@
 				);
 				INFOPLIST_FILE = Demo01Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo01.app/Demo01";
 			};
